@@ -169,6 +169,24 @@ section {
   height: 80vh;
 }
 
+#dynamic-text {
+  display: inline-block;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+}
+
+.blinking-caret {
+  animation: blink-caret 0.7s steps(1) infinite;
+}
+
+@keyframes blink-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+
 .section__pic-container {
   display: flex;
   height: 500px;
