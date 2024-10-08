@@ -401,12 +401,12 @@ article .icon {
 }
 
 .project-video {
-  border-radius: 10px;
+  border-radius: 25px;
   position: fixed; /* Make the video fixed so it is not bound to the container */
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Center the video */
-  width: 70%; /* Set the size of the video */
+  width: 79%; /* Set the size of the video */
   height: 80vh;
   display: none; /* Hidden by default */
   z-index: 9999; /* Ensure the video appears above everything */
