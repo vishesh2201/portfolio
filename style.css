@@ -410,9 +410,9 @@ article .icon {
   /* Center horizontally */
   transform: translate(-50%, -50%);
   /* Center the video */
-  width: 345.6px;
+  width: 346px;
   /* Set the size of the video */
-  height: 700.8px;
+  height: 700px;
   display: none;
   /* Hidden by default */
   z-index: 9999;
@@ -429,10 +429,10 @@ article .icon {
 }
 
 .project-img {
-  margin-top: 20px;
+  margin-top: 25px;
   border-radius: 1.5rem;
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  height: 85%;
 }
 
 
