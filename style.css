@@ -325,11 +325,12 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .details-container:hover {
-  transform: scale(1.01);
+  transform: scale(1.05);
 }
 
 .section-container {
@@ -406,7 +407,7 @@ article .icon {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 345.6px;
+  width: 345.3px;
   height: 700px;
   display: none;
   z-index: 9999;
@@ -416,7 +417,6 @@ article .icon {
 
 .project-img:hover+.project-video {
   display: block;
-  /* Show video when hovering over the image */
 }
 
 .project-img {
