@@ -291,7 +291,7 @@ section {
   margin-top: 2rem;
 }
 
-.text-container{
+.text-container {
   font-size: 1.1rem;
 }
 
@@ -328,7 +328,7 @@ section {
   transition: transform 0.3s ease;
 }
 
-.details-container:hover{
+.details-container:hover {
   transform: scale(1.01);
 }
 
@@ -402,20 +402,30 @@ article .icon {
 
 .project-video {
   border-radius: 30px;
-  position: fixed; /* Make the video fixed so it is not bound to the container */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center the video */
-  width: 345.6px; /* Set the size of the video */
+  position: fixed;
+  /* Make the video fixed so it is not bound to the container */
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Center the video */
+  width: 345.6px;
+  /* Set the size of the video */
   height: 700.8px;
-  display: none; /* Hidden by default */
-  z-index: 9999; /* Ensure the video appears above everything */
-  pointer-events: none; /* Make sure the video doesn't interfere with user interactions */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Adding shadow for elevation */
+  display: none;
+  /* Hidden by default */
+  z-index: 9999;
+  /* Ensure the video appears above everything */
+  pointer-events: none;
+  /* Make sure the video doesn't interfere with user interactions */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  /* Adding shadow for elevation */
 }
 
-.project-img:hover + .project-video {
-  display: block; /* Show video when hovering over the image */
+.project-img:hover+.project-video {
+  display: block;
+  /* Show video when hovering over the image */
 }
 
 .project-img {
