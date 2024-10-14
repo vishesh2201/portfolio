@@ -1,6 +1,3 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -44,44 +41,32 @@ function type() {
   }
 }
 
-// Set up Three.js scene
+import * as THREE from '/node_modules/three/build/three.module.js';
+import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+
+const canvas = document.getElementById('canvas');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({ canvas });
+
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById("canvas-container").appendChild(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 
 // Load the 3D model
 const loader = new GLTFLoader();
-loader.load('./assets/solved_cube.glb', function(gltf) {
-  const model = gltf.scene;
-  model.scale.set(1.5, 1.5, 1.5); // Adjust the scale as needed
-  scene.add(model);
-  
-  // Position the model
-  model.position.set(0, 0, 0); // Adjust position as needed
-
-  animate();
-}, undefined, function(error) {
-  console.error(error);
+loader.load('./assets/solved_cube.glb', (gltf) => {
+    scene.add(gltf.scene);
+    // Optional: Set the initial position and scale of the model
+    gltf.scene.position.set(0, 0, 0); // Adjust the position as needed
+    gltf.scene.scale.set(1, 1, 1); // Adjust the scale as needed
+}, undefined, (error) => {
+    console.error(error);
 });
 
 // Animation loop
 function animate() {
-  requestAnimationFrame(animate);
-  if (scene.children.length > 0) {
-    const model = scene.children[0]; // Assuming the model is the first child
-    model.rotation.y += 0.01; // Rotate the model
-  }
-  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
 }
+animate();
 
-// Handle window resizing
-window.addEventListener('resize', function() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
-
-// Start typing animation
-document.addEventListener("DOMContentLoaded", () => setTimeout(type, typingSpeed));
