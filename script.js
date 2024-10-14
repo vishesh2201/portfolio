@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -41,65 +44,44 @@ function type() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => setTimeout(type, typingSpeed));
+// Set up Three.js scene
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById("canvas-container").appendChild(renderer.domElement);
 
-// Three.js Setup for 3D Rubik's Cube
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
-let scene, camera, renderer, cube;
-
-function init() {
-  // Create the scene
-  scene = new THREE.Scene();
+// Load the 3D model
+const loader = new GLTFLoader();
+loader.load('./assets/models/solved_cube.glb', function(gltf) {
+  const model = gltf.scene;
+  model.scale.set(1.5, 1.5, 1.5); // Adjust the scale as needed
+  scene.add(model);
   
-  // Create a camera
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 5;
+  // Position the model
+  model.position.set(0, 0, 0); // Adjust position as needed
 
-  // Create a renderer
-  renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('rubiks-cube-canvas') });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  
-  // Add ambient light
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-  scene.add(ambientLight);
-  
-  // Add directional light
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-  scene.add(directionalLight);
-
-  // Load the Rubik's cube model
-  const loader = new GLTFLoader();
-  loader.load('./assets/solved_cube.glb', (gltf) => {
-    cube = gltf.scene;
-    scene.add(cube);
-  });
-
-  // Handle window resize
-  window.addEventListener('resize', onWindowResize);
-  
-  // Start the animation loop
   animate();
-}
+}, undefined, function(error) {
+  console.error(error);
+});
 
+// Animation loop
 function animate() {
   requestAnimationFrame(animate);
-  
-  // Rotate the cube for interaction
-  if (cube) {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+  if (scene.children.length > 0) {
+    const model = scene.children[0]; // Assuming the model is the first child
+    model.rotation.y += 0.01; // Rotate the model
   }
-  
   renderer.render(scene, camera);
 }
 
-function onWindowResize() {
+// Handle window resizing
+window.addEventListener('resize', function() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-}
+});
 
-// Initialize the Three.js scene
-init();
+// Start typing animation
+document.addEventListener("DOMContentLoaded", () => setTimeout(type, typingSpeed));
