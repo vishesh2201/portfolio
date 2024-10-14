@@ -39,8 +39,10 @@
     </nav>
 
     <section id="profile">
+      <!-- 3D Rubik's Cube Container -->
       <div class="section__pic-container">
-        <img src="./assets/profile.png" alt="Arjun profile picture" />
+        <!-- Three.js will render the 3D cube in this div -->
+        <canvas id="rubiks-cube-canvas"></canvas>
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
@@ -75,6 +77,8 @@
         </div>
       </div>
     </section>
+    
+    
 
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
