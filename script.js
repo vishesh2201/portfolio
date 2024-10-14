@@ -19,46 +19,54 @@ function type() {
 
   // Update the text content and wrap the caret with a span for blinking
   if (isDeleting) {
-    dynamicText.innerHTML = currentRole.substring(0, charIndex - 1) + '<span class="blinking-caret">|</span>';
-    charIndex--;
+      dynamicText.innerHTML = currentRole.substring(0, charIndex - 1) + '<span class="blinking-caret">|</span>';
+      charIndex--;
   } else {
-    dynamicText.innerHTML = currentRole.substring(0, charIndex + 1) + '<span class="blinking-caret">|</span>';
-    charIndex++;
+      dynamicText.innerHTML = currentRole.substring(0, charIndex + 1) + '<span class="blinking-caret">|</span>';
+      charIndex++;
   }
 
   // When the role is fully typed and waiting to be deleted
   if (!isDeleting && charIndex === currentRole.length) {
-    isDeleting = true;
-    setTimeout(type, delayBetweenRoles);
+      isDeleting = true;
+      setTimeout(type, delayBetweenRoles);
   }
   // When the role is fully deleted and moving to the next
   else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-    setTimeout(type, typingSpeed);
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(type, typingSpeed);
   } else {
-    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
   }
 }
 
-import * as THREE from '/node_modules/three/build/three.module.js';
-import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const canvas = document.getElementById('canvas');
+// Create scene, camera, and renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas });
-
+const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+// Add lights
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+directionalLight.position.set(5, 5, 5).normalize();
+scene.add(directionalLight);
+
 // Load the 3D model
 const loader = new GLTFLoader();
-loader.load('./assets/solved_cube.glb', (gltf) => {
+loader.load('/assets/solved_cube.glb', (gltf) => {
     scene.add(gltf.scene);
-    // Optional: Set the initial position and scale of the model
-    gltf.scene.position.set(0, 0, 0); // Adjust the position as needed
-    gltf.scene.scale.set(1, 1, 1); // Adjust the scale as needed
+    
+    // Position the model
+    gltf.scene.position.set(0, 0, 0); // Adjust as needed
+    camera.position.set(0, 1, 5); // Move camera back for visibility
+    camera.lookAt(gltf.scene.position); // Look at the model
 }, undefined, (error) => {
     console.error(error);
 });
@@ -70,3 +78,6 @@ function animate() {
 }
 animate();
 
+
+// Start typing effect after DOM is loaded
+document.addEventListener("DOMContentLoaded", () => setTimeout(type, typingSpeed));
