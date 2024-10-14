@@ -53,7 +53,7 @@ document.getElementById("canvas-container").appendChild(renderer.domElement);
 
 // Load the 3D model
 const loader = new GLTFLoader();
-loader.load('./assets/models/solved_cube.glb', function(gltf) {
+loader.load('./assets/solved_cube.glb', function(gltf) {
   const model = gltf.scene;
   model.scale.set(1.5, 1.5, 1.5); // Adjust the scale as needed
   scene.add(model);
