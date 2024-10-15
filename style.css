@@ -333,6 +333,11 @@ section {
   transform: scale(1.05);
 }
 
+#cube-canvas {
+  width: 50%; /* Canvas takes half the width */
+  height: 100%; /* Full height */
+}
+
 .section-container {
   gap: 4rem;
   height: 80%;
