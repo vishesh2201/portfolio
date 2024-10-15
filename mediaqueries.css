@@ -1,10 +1,17 @@
 @media screen and (max-width: 1400px) {
   #profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 83vh;
     margin-bottom: 6rem;
-  } 
+  }
   .about-containers {
     flex-wrap: wrap;
+  }
+  #cube-canvas {
+    width: 60%; /* Adjusted width for mid-sized screens */
+    margin-top: 3rem;
   }
   #contact,
   #projects {
@@ -37,6 +44,10 @@
   section {
     margin: 0 5%;
   }
+  #cube-canvas {
+    width: 80%; /* Adjusted width for smaller screens */
+    margin: 2rem auto; /* Center the canvas */
+  }
   .section__pic-container {
     width: 275px;
     height: 275px;
@@ -53,8 +64,15 @@
     height: 40vh;
   }
   #profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 83vh;
     margin-bottom: 0;
+  }
+  #cube-canvas {
+    width: 90%; /* Almost full width for very small screens */
+    margin: 1rem auto; /* Center the canvas */
   }
   article {
     font-size: 1rem;

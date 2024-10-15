@@ -61,11 +61,11 @@ loader.load('/src/assets/unsolved_cube.glb', (gltf) => {
   console.error('An error occurred loading the model: ', error);
 });
 
-// Handle resizing the canvas with window size
 window.addEventListener('resize', () => {
-  const width = window.innerWidth / 2;
-  const height = window.innerHeight;
+  const width = window.innerWidth * 1; // Responsive width based on screen size
+  const height = window.innerHeight * 1; // Responsive height
   renderer.setSize(width, height);
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 });
+
