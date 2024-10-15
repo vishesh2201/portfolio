@@ -1,7 +1,7 @@
 @media screen and (max-width: 1400px) {
   #profile {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     height: 83vh;
     margin-bottom: 6rem;
@@ -31,6 +31,14 @@
     margin-top: 2rem;
   }
   #profile,
+
+  #profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
   .section-container {
     display: block;
   }

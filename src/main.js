@@ -62,10 +62,17 @@ loader.load('/src/assets/unsolved_cube.glb', (gltf) => {
 });
 
 window.addEventListener('resize', () => {
-  const width = window.innerWidth * 1; // Responsive width based on screen size
-  const height = window.innerHeight * 1; // Responsive height
+  // Get the canvas element
+  const canvasContainer = document.querySelector('#cube-canvas');
+  
+  // Get new dimensions based on the container
+  const width = canvasContainer.clientWidth;
+  const height = canvasContainer.clientHeight;
+
+  // Update renderer size to fit the canvas container
   renderer.setSize(width, height);
+  
+  // Adjust camera aspect ratio and update projection matrix
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 });
-
