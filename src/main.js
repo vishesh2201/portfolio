@@ -8,13 +8,13 @@ scene.background = new THREE.Color(0xffffff); // Set background to white
 
 // Camera setup: Simulate a 100mm lens with FOV ~ 20 degrees
 const fov = 20; // FOV for a 100mm lens on a full-frame sensor
-const aspectRatio = window.innerWidth / 2 / window.innerHeight;
+const aspectRatio = window.innerWidth/2 / window.innerHeight;
 const camera = new THREE.PerspectiveCamera(fov, aspectRatio, 0.1, 1000);
-camera.position.set(0, 0, 25); // Camera positioned slightly further back
+camera.position.set(0, 0, 15); // Camera positioned slightly further back
 
 // Renderer setup
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('cube-canvas'), antialias: true });
-renderer.setSize(window.innerWidth / 2, window.innerHeight);
+renderer.setSize(window.innerWidth / 4, window.innerHeight/2);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 // Add lights for even illumination
@@ -35,6 +35,7 @@ scene.add(pointLight);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Smooth rotation for controls
 controls.dampingFactor = 0.05;
+controls.enableZoom = false;
 controls.minDistance = 5; // Minimum zoom distance
 controls.maxDistance = 50; // Maximum zoom distance
 
