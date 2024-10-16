@@ -41,7 +41,7 @@ controls.maxDistance = 50; // Maximum zoom distance
 
 // Load the GLB model
 const loader = new GLTFLoader();
-loader.load('/src/assets/solved_cube.glb', (gltf) => {
+loader.load('./solved_cube.glb', (gltf) => {
   const model = gltf.scene;
   model.scale.set(1, 1, 1); // Set scale to 1
   model.position.set(0, 0, 0); // Set initial position
