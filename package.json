@@ -4,11 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "node node_modules/vite/bin/vite.js build",
-    "serve": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "serve": "vite preview"
   },
   "dependencies": {
-    "gh-pages": "^6.2.0",
     "three": "^0.169.0"
   },
   "devDependencies": {
