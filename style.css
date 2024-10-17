@@ -183,6 +183,38 @@ section {
   }
 }
 
+/* Adding top margin to "I'm a problem solver" text */
+#info h1 {
+  margin-top: 30px; /* Add your desired margin */
+  font-size: 22px;
+  text-align: center;
+  color: #000; /* Match button text color */
+}
+
+#solve-button {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  display: block;
+  margin: 10px auto;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: black; /* Match button text color */
+  background-color: white;
+  border: 0.1rem solid rgb(53, 53, 53); /* Similar border style */
+  border-radius: 2rem; /* Rounded button */
+  cursor: pointer;
+  width: 10rem; /* Match button width */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button hover effect */
+#solve-button:hover {
+  background-color: black; /* Invert to match hover effect */
+  color: white; /* Text color on hover */
+}
+
+
 
 .section__pic-container {
   display: flex;

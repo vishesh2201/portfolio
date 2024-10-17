@@ -22,7 +22,7 @@ function resizeRendererToDisplaySize() {
   const canvasContainer = document.querySelector('#cube-canvas');
   const width = canvasContainer.clientWidth;
   const height = canvasContainer.clientHeight;
-  
+
   const needResize = canvas.width !== width || canvas.height !== height;
   if (needResize) {
     renderer.setSize(width, height, false);
@@ -51,27 +51,106 @@ controls.enableZoom = false;
 controls.minDistance = 5;
 controls.maxDistance = 50;
 
-// Load the GLB model
+// Variable to keep track of the current model
+let currentModel;
 const loader = new GLTFLoader();
-loader.load('unsolved_cube.glb', (gltf) => {
-  const model = gltf.scene;
-  model.scale.set(1, 1, 1);
-  model.position.set(0, 0, 0);
-  scene.add(model);
 
-  // Animation loop to rotate the cube
+// Function to load and animate models
+function loadModel(url, animate = true) {
+  loader.load(url, (gltf) => {
+    if (currentModel) {
+      if (animate) {
+        // Animate the old model out (scale down and fade out)
+        animateOut(currentModel, () => {
+          scene.remove(currentModel); // Remove after animation
+          addModel(gltf.scene); // Add the new model after the old one is gone
+        });
+      } else {
+        scene.remove(currentModel); // Just remove without animation
+        addModel(gltf.scene); // Add the new model immediately
+      }
+    } else {
+      addModel(gltf.scene);
+    }
+  }, undefined, function (error) {
+    console.error('An error occurred loading the model: ', error);
+  });
+}
+
+// Add the model to the scene and animate it in
+function addModel(model) {
+  currentModel = model;
+  currentModel.scale.set(0, 0, 0); // Start small for animation
+  currentModel.position.set(0, 0, 0);
+  scene.add(currentModel);
+
+  // Animate the new model in (scale up and rotate)
+  animateIn(currentModel);
+}
+
+// Animation for scaling the new model in (faster version)
+function animateIn(model) {
+  const duration = 600; // Faster animation: 250ms duration
+  const targetScale = { x: 1, y: 1, z: 1 };
+
+  let startTime = Date.now();
   function animate() {
-    resizeRendererToDisplaySize(); // Resize the renderer and update camera aspect ratio on each frame
-    model.rotation.y += 0.001;
-    model.rotation.x += 0.001;
-    controls.update(); // Required for damping effect on controls
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-  }
+    let elapsedTime = Date.now() - startTime;
+    let progress = Math.min(elapsedTime / duration, 1);
 
+    // Scale and rotation based on progress
+    model.scale.set(progress, progress, progress);
+    model.rotation.y += 0.1; // Faster rotation while scaling in
+
+    if (progress < 1) {
+      requestAnimationFrame(animate); // Continue animation until finished
+    }
+  }
   animate();
-}, undefined, function (error) {
-  console.error('An error occurred loading the model: ', error);
+}
+
+// Animation for scaling the old model out (faster version)
+function animateOut(model, onComplete) {
+  const duration = 500; // Faster animation: 250ms duration
+  let startTime = Date.now();
+
+  function animate() {
+    let elapsedTime = Date.now() - startTime;
+    let progress = Math.min(elapsedTime / duration, 1);
+
+    // Scale down
+    let scale = 1 - progress;
+    model.scale.set(scale, scale, scale);
+    model.rotation.y += 0.1; // Faster rotation while scaling down
+
+    if (progress < 1) {
+      requestAnimationFrame(animate); // Continue animation
+    } else if (onComplete) {
+      onComplete(); // Call callback once animation finishes
+    }
+  }
+  animate();
+}
+
+// Initial load of the unsolved cube
+loadModel('unsolved_cube.glb', false); // No animation on first load
+
+// Animation loop
+function animate() {
+  resizeRendererToDisplaySize(); // Resize the renderer and update camera aspect ratio on each frame
+  if (currentModel) {
+    currentModel.rotation.y += 0.002; // Faster rotation for the model
+    currentModel.rotation.x += 0.002;
+  }
+  controls.update(); // Required for damping effect on controls
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Event listener for the "solve the cube" button
+document.getElementById('solve-button').addEventListener('click', () => {
+  loadModel('solved_cube.glb'); // Load solved cube with animation
 });
 
 // Resize event listener to handle resizing when window size changes
