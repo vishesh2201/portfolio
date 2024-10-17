@@ -90,7 +90,7 @@ function addModel(model) {
 
 // Animation for scaling the new model in (faster version)
 function animateIn(model) {
-  const duration = 600; // Faster animation: 250ms duration
+  const duration = 1000; // Faster animation: 250ms duration
   const targetScale = { x: 1, y: 1, z: 1 };
 
   let startTime = Date.now();
@@ -111,7 +111,7 @@ function animateIn(model) {
 
 // Animation for scaling the old model out (faster version)
 function animateOut(model, onComplete) {
-  const duration = 500; // Faster animation: 250ms duration
+  const duration = 1000; // Faster animation: 250ms duration
   let startTime = Date.now();
 
   function animate() {
