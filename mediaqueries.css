@@ -88,7 +88,7 @@
   #cube-canvas {
     width: 100% !important; /* Almost full width for very small screens */
     height: 70% !important;
-    margin: 1rem auto; /* Center the canvas */
+    margin: -2.5rem auto; /* Center the canvas */
   }
 }
   article {
