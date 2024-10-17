@@ -185,7 +185,6 @@ section {
 
 /* Adding top margin to "I'm a problem solver" text */
 #info h1 {
-  margin-top: 30px; /* Add your desired margin */
   font-size: 22px;
   text-align: center;
   color: #000; /* Match button text color */
@@ -195,7 +194,7 @@ section {
   font-family: "Lexend", sans-serif;
   font-weight: 600;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 0.8rem;
   font-size: 1rem;
   color: black; /* Match button text color */
@@ -325,6 +324,7 @@ section {
 }
 
 .about-details-container {
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -332,11 +332,9 @@ section {
 .about-containers,
 .about-details-container {
   display: flex;
+  margin: 20px;
 }
 
-.about-pic {
-  border-radius: 2rem;
-}
 
 .arrow {
   position: absolute;
@@ -372,6 +370,7 @@ section {
 
 .section-container {
   display: flex;
+  align-items: center;
   justify-content: center; /* Add this line */
   gap: 4rem;
   height: 80%;
