@@ -10,7 +10,8 @@
     flex-wrap: wrap;
   }
   #cube-canvas {
-    width: 60%; /* Adjusted width for mid-sized screens */
+    width: 60% !important; /* Adjusted width for mid-sized screens */
+    height: auto !important;
     margin-top: 3rem;
   }
   #contact,
@@ -52,10 +53,14 @@
   section {
     margin: 0 5%;
   }
+ /* For screens smaller than 1200px, let CSS handle the canvas size */
+@media screen and (max-width: 1200px) {
   #cube-canvas {
-    width: 80%; /* Adjusted width for smaller screens */
+    width: 80% !important; /* Responsive width for smaller screens */
+    height: auto !important; /* Keep aspect ratio intact */
     margin: 2rem auto; /* Center the canvas */
   }
+}
   .section__pic-container {
     width: 275px;
     height: 275px;
@@ -78,10 +83,14 @@
     height: 83vh;
     margin-bottom: 0;
   }
+ /* For screens smaller than 600px, provide near full width */
+@media screen and (max-width: 600px) {
   #cube-canvas {
-    width: 90%; /* Almost full width for very small screens */
+    width: 100% !important; /* Almost full width for very small screens */
+    height: auto !important;
     margin: 1rem auto; /* Center the canvas */
   }
+}
   article {
     font-size: 1rem;
   }

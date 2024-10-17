@@ -331,10 +331,11 @@ section {
 }
 
 #cube-canvas {
-  margin-top: 5rem;
-  width: 50%; 
-  height: 100%;
+  width: 50% !important; /* Full width */
+  height: auto !important; /* Maintain aspect ratio */
+  display: block;
 }
+
 
 
 .section-container {
