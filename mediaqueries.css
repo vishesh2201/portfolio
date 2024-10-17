@@ -87,7 +87,7 @@
 @media screen and (max-width: 600px) {
   #cube-canvas {
     width: 100% !important; /* Almost full width for very small screens */
-    height: auto !important;
+    height: 70% !important;
     margin: 1rem auto; /* Center the canvas */
   }
 }
