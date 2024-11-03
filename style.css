@@ -16,7 +16,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: rgb(60, 60, 60);
 }
 
 /* TRANSITION */
@@ -97,7 +97,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
