@@ -97,7 +97,7 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space flex justify-center">
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space flex justify-center gap-4">
         <button 
           onClick={() => setShowSolved((prev) => !prev)} 
           className="w-fit"
@@ -108,7 +108,21 @@ const Hero = () => {
             containerClass="sm:w-fit w-full sm:min-w-70" 
           />
         </button>
+
+        <a 
+          href="/assets/resume2025.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="w-fit"
+        >
+          <Button 
+            name="Download Resume" 
+            isBeam 
+            containerClass="sm:w-fit w-full sm:min-w-70" 
+          />
+        </a>
       </div>
+
     </section>
   );
 };
