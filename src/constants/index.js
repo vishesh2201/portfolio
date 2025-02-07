@@ -43,7 +43,7 @@ export const myProjects = [
       { id: 1, name: 'React.js', path: '/assets/react.svg' },
       { id: 2, name: 'Three.js', path: '/assets/threejs.svg' },
       { id: 3, name: 'Drei', path: '/assets/drei.svg' },
-      { id: 4, name: 'TailwindCSS', path: '/assets/tailwindcss.png' },
+      { id: 4, name: 'TailwindCSS', path: '/assets/tailwind.svg' },
     ],
   },
   {
@@ -77,7 +77,7 @@ export const myProjects = [
     },
     tags: [
       { id: 1, name: 'React.js', path: '/assets/react.svg' },
-      { id: 2, name: 'TailwindCSS', path: '/assets/tailwindcss.png' },
+      { id: 2, name: 'TailwindCSS', path: '/assets/tailwind.svg' },
       { id: 3, name: 'TMDB API', path: '/assets/tmdb.svg' },
     ],
   },
@@ -306,4 +306,16 @@ export const EducationExperiences = [
       "Created a brand identity and guidelines."
     ],
   },
+];
+
+export const techStack = [
+  { name: 'React', image: 'assets/react.svg' }, // Replace with your image paths
+  { name: 'Three JS', image: 'assets/threejs.svg' },
+  { name: 'Tailwind', image: 'assets/tailwind.svg' },
+  { name: 'Android', image: 'assets/android.svg' },
+  { name: 'Github', image: 'assets/github.svg' },
+  { name: 'Firebase', image: 'assets/firebase.svg' },
+  { name: 'Java', image: 'assets/java.svg' },
+  { name: 'Kotlin', image: 'assets/kotlin.svg' },
+  // Add more tech stack items here
 ];
