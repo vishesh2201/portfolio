@@ -273,9 +273,9 @@ export const EducationExperiences = [
     icon: '/assets/school.svg',
     iconBg: "#ff0000",
     points: [
-      "Creating interactive three.js websites.",
-      "Collaborating with designers and developers for UI.",
-      "Bringing designs to life before actual development."
+      "Currently in 3rd Year of AIML Branch.",
+      "Empulse Artilect Event Design Head for the year 2023",
+      "Working hard to handle a good pointer while doing an Internship."
     ],
   },
   {
@@ -287,9 +287,8 @@ export const EducationExperiences = [
     icon: '/assets/school.svg',
     iconBg: "#000000",
     points: [
-      "Started a youtube channel that gained 30,000 Subscribers.",
-      "Used SEO Tricks to get 50 Million Total Views.",
-      "Edited engaging youtube shorts."
+      "Completed my 12th in Science with Electronics.",
+      "Learned higher level mathematics while studying for JEE.",
     ],
   },
   {
@@ -301,9 +300,8 @@ export const EducationExperiences = [
     icon: '/assets/school.svg',
     iconBg: "#000000",
     points: [
-      "Made 3D renders and models for this supliment company.",
-      "Editing workout and talking head videos.",
-      "Created a brand identity and guidelines."
+      "Completed my highschool at Kalmadi Shamrao Highschool, Aundh.",
+      "Always in the computer lab either working on a school project or my own projects.",
     ],
   },
 ];
