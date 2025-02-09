@@ -307,7 +307,7 @@ export const EducationExperiences = [
 ];
 
 export const techStack = [
-  { name: 'React', image: 'assets/react.svg' }, // Replace with your image paths
+  { name: 'React', image: 'assets/react.svg' }, 
   { name: 'Three JS', image: 'assets/threejs.svg' },
   { name: 'Tailwind', image: 'assets/tailwind.svg' },
   { name: 'Android', image: 'assets/android.svg' },
@@ -315,5 +315,4 @@ export const techStack = [
   { name: 'Firebase', image: 'assets/firebase.svg' },
   { name: 'Java', image: 'assets/java.svg' },
   { name: 'Kotlin', image: 'assets/kotlin.svg' },
-  // Add more tech stack items here
 ];
