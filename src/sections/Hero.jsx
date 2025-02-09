@@ -103,7 +103,7 @@ const Hero = () => {
           className="w-fit"
         >
           <Button 
-            name={showSolved ? "Back to the challenge!" : "I'm a problem solver."} 
+            name={showSolved ? "Back to the challenge" : "I'm a problem solver"} 
             isBeam 
             containerClass="sm:w-fit w-full sm:min-w-70" 
           />

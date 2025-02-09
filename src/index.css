@@ -68,7 +68,10 @@ body {
   .grid-headtext {
     @apply text-xl font-semibold mb-2 text-white font-generalsans;
   }
-
+  .contact-btn {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg  dark:bg-[#ffffff0a] transition ;
+  }
+  
   .grid-subtext {
     @apply text-[#afb0b6] text-base font-generalsans;
   }

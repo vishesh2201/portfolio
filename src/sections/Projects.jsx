@@ -32,9 +32,9 @@ const Projects = () => {
   }, [selectedProjectIndex, activeCategory]);
 
   return (
-    <section id='projects' className="c-space my-20 p-32">
+    <section id='projects' className="c-space p-32">
       <div className="flex items-center justify-between">
-        <p className="head-text">My Selected Work</p>
+        <p className="head-text">My Projects</p>
 
         {/* Web Dev & App Dev Buttons */}
         <div className="flex gap-4">

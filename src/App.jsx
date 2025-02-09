@@ -11,11 +11,11 @@ const App = () => {
     <main className="max-w-7xl mx-auto relative">
       <Navbar />
       <Hero />
-      <About />
       <Projects />
+      <About />
       <WorkExperience />
-      <Footer />
       <Contact />
+      <Footer />
     </main>
   );
 };
