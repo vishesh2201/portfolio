@@ -10,7 +10,7 @@ export const navLinks = [
     href: '#projects',
   },
   {
-    id: 3,
+    id: 3,  
     name: 'About',
     href: '#about',
   },
@@ -18,6 +18,23 @@ export const navLinks = [
 ];
 
 export const myProjects = [
+  {
+    title: 'Valorant Landing Page',
+    desc: 'A React and GSAP-powered landing page for Valorant with advanced animations.',
+    subdesc: 'Built to showcase expertise in React and GSAP animations, creating an immersive user experience.',
+    href: 'https://valorant-react-web-app.vercel.app/',
+    texture: '/textures/project/project2.webm',
+    logo: '/assets/valorant.svg',
+    logoStyle: {
+      backgroundColor: '#ff4655',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #444444',
+    },
+    tags: [
+      { id: 1, name: 'React.js', path: '/assets/react.svg' },
+      { id: 2, name: 'GSAP', path: '/assets/gsap.svg' },
+    ],
+  },
   {
     title: 'iPhone 15 Pro Website',
     desc: 'A React and Three.js project showcasing a 3D iPhone model with color-changing animations on user input.',
@@ -37,23 +54,7 @@ export const myProjects = [
       { id: 4, name: 'TailwindCSS', path: '/assets/tailwind.svg' },
     ],
   },
-  {
-    title: 'Valorant Landing Page',
-    desc: 'A React and GSAP-powered landing page for Valorant with advanced animations.',
-    subdesc: 'Built to showcase expertise in React and GSAP animations, creating an immersive user experience.',
-    href: 'https://valorant-react-web-app.vercel.app/',
-    texture: '/textures/project/project2.webm',
-    logo: '/assets/valorant.svg',
-    logoStyle: {
-      backgroundColor: '#ff4655',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #444444',
-    },
-    tags: [
-      { id: 1, name: 'React.js', path: '/assets/react.svg' },
-      { id: 2, name: 'GSAP', path: '/assets/gsap.svg' },
-    ],
-  },
+
   {
     title: 'Movies React Website',
     desc: 'A React and Tailwind CSS website that uses the TMDB API to feature a dynamic top 5 trending movies section.',
