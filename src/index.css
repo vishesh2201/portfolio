@@ -27,11 +27,11 @@ body {
   }
 
   .nav-li {
-    @apply text-neutral-400 hover:text-white font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+    @apply text-neutral-400 font-generalsans max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5; /* Removed hover effects */
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-white transition-colors;
+    @apply text-lg md:text-base transition-colors; /* Removed hover effects */
   }
 
   .nav-sidebar {
@@ -44,7 +44,7 @@ body {
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300 transition-all active:scale-95 text-white mx-auto;
   }
 
   .btn-ping {
@@ -69,9 +69,9 @@ body {
     @apply text-xl font-semibold mb-2 text-white font-generalsans;
   }
   .contact-btn {
-    @apply flex items-center gap-2 px-4 py-2 rounded-lg  dark:bg-[#ffffff0a] transition ;
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg dark:bg-[#ffffff0a] transition ;
   }
-  
+
   .grid-subtext {
     @apply text-[#afb0b6] text-base font-generalsans;
   }
@@ -102,7 +102,7 @@ body {
     @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
   }
 
-  /*  work experience section */
+  /* work experience section */
   .work-container {
     @apply grid lg:grid-cols-4 grid-cols-1 gap-5 mt-12;
   }
@@ -116,7 +116,7 @@ body {
   }
 
   .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+    @apply grid grid-cols-[auto_1fr] items-start gap-5 rounded-lg sm:px-5 px-2.5; /* Removed hover effects */
   }
 
   .work-content_logo {
@@ -124,7 +124,7 @@ body {
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-black-300; /* Removed hover effects */
   }
 
   /* contact section */
@@ -145,7 +145,6 @@ body {
     backdrop-filter: blur(10px); /* Frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari */
   }
-  
 
   .field-btn {
     @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
@@ -155,7 +154,7 @@ body {
     @apply w-2.5 h-2.5 object-contain invert brightness-0;
   }
 
-  /*  footer */
+  /* footer */
   .social-icon {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
   }
