@@ -80,13 +80,13 @@ const About = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
                 <a
-                  href="https://wa.me/919175917604"
+                  href="https://www.instagram.com/arjun.3d/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-btn text-white-500 hover:text-white transition-colors duration-300 flex items-center"
                 >
-                  <img src="assets/whatsapp.svg" alt="WhatsApp" className="h-6 w-6 mr-2" />
-                  <span className="text-center w-full">WhatsApp</span>
+                  <img src="assets/instagram.svg" alt="WhatsApp" className="h-6 w-6 mr-2" />
+                  <span className="text-center w-full">Instagram</span>
                 </a>
                 <a
                   href="mailto:arjundeshmukh26@gmail.com"
