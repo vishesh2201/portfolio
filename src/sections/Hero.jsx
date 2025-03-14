@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Leva } from 'leva';
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
@@ -22,48 +22,15 @@ const Hero = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
-  const roles = ["Android Developer", "UI/UX Designer", "Frontend Developer", "3D Artist", "Problem Solver"];
-  const [text, setText] = useState("");
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const typingSpeed = 50; // Typing speed
-    const deletingSpeed = 25; // Deleting speed
-    const delayBetweenRoles = 1500; // Delay before switching roles
-
-    const currentRole = roles[roleIndex];
-
-    if (!isDeleting && charIndex < currentRole.length) {
-      // Typing effect
-      setTimeout(() => {
-        setText(currentRole.substring(0, charIndex + 1));
-        setCharIndex((prev) => prev + 1);
-      }, typingSpeed);
-    } else if (isDeleting && charIndex > 0) {
-      // Deleting effect
-      setTimeout(() => {
-        setText(currentRole.substring(0, charIndex - 1));
-        setCharIndex((prev) => prev - 1);
-      }, deletingSpeed);
-    } else if (!isDeleting && charIndex === currentRole.length) {
-      // Wait before deleting
-      setTimeout(() => setIsDeleting(true), delayBetweenRoles);
-    } else if (isDeleting && charIndex === 0) {
-      // Move to next role
-      setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
-    }
-  }, [charIndex, isDeleting, roleIndex]);
+  const role = "A Frontend Developer";
 
   return (
     <section className="min-h-[90dvh] w-full flex flex-col relative" id="home">
       <div className="w-full mx-auto flex flex-col sm:mt-30 mt-20 c-space gap-1">
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
-          <span className="waving-hand">👋</span>{' '}Hey, I am 
+          Hey, I am Arjun 
         </p>
-        <p className="hero_tag text-gray_gradient">{text}</p>
+        <p className="hero_tag text-gray_gradient">{role}</p>
       </div>
 
       <div className="w-full h-full absolute inset-0">
@@ -74,16 +41,16 @@ const Hero = () => {
 
             <HeroCamera isMobile={isMobile}>
               {showSolved ? (
-                <SolvedCube 
-                  scale={sizes.cubeScale} 
-                  position={sizes.cubePosition} 
-                  rotation={[0, -Math.PI / 1.5, 0]} 
+                <SolvedCube
+                  scale={sizes.cubeScale}
+                  position={sizes.cubePosition}
+                  rotation={[0, -Math.PI / 1.5, 0]}
                 />
               ) : (
-                <UnsolvedCube 
-                  scale={sizes.cubeScale} 
-                  position={sizes.cubePosition} 
-                  rotation={[0, -Math.PI / 1.5, 0]} 
+                <UnsolvedCube
+                  scale={sizes.cubeScale}
+                  position={sizes.cubePosition}
+                  rotation={[0, -Math.PI / 1.5, 0]}
                 />
               )}
             </HeroCamera>
@@ -98,31 +65,30 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space flex justify-center gap-4">
-        <button 
-          onClick={() => setShowSolved((prev) => !prev)} 
+        <button
+          onClick={() => setShowSolved((prev) => !prev)}
           className="w-fit"
         >
-          <Button 
-            name={showSolved ? "Go Back" : "Solve the cube!"} 
-            isBeam 
-            containerClass="sm:w-fit w-full sm:min-w-70" 
+          <Button
+            name={showSolved ? "Go Back" : "Solve the cube!"}
+            isBeam
+            containerClass="sm:w-fit w-full sm:min-w-70"
           />
         </button>
 
-        <a 
-          href="/assets/resume2025.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="/assets/resume2025.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-fit"
         >
-          <Button 
-            name="Download Resume" 
-            isBeam 
-            containerClass="sm:w-fit w-full sm:min-w-70" 
+          <Button
+            name="Download Resume"
+            isBeam
+            containerClass="sm:w-fit w-full sm:min-w-70"
           />
         </a>
       </div>
-
     </section>
   );
 };
