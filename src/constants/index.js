@@ -303,7 +303,7 @@ export const techStack = [
   { name: 'Three JS', image: 'assets/threejs.svg' },
   { name: 'Tailwind', image: 'assets/tailwind.svg' },
   { name: 'Android', image: 'assets/android.svg' },
-  { name: 'Github', image: 'assets/github.svg' },
+  { name: 'Git', image: 'assets/git.svg' },
   { name: 'Firebase', image: 'assets/firebase.svg' },
   { name: 'Java', image: 'assets/java.svg' },
   { name: 'Kotlin', image: 'assets/kotlin.svg' },
