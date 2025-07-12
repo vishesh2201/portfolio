@@ -8,18 +8,18 @@ const Contact = () => {
         <p className="grid-subtext mb-6">
           Feel free to reach out through any of the platforms below.
         </p>
-        <div className="flex flex-wrap justify-center gap-4"> 
+        <div className="flex flex-wrap justify-center gap-4">
           <a
             href="https://wa.me/919175917604"
             target="_blank"
             rel="noopener noreferrer"
-            className="contact-btn text-white-500 hover:text-white transition-colors duration-300" 
+            className="contact-btn text-white-500 hover:text-white transition-colors duration-300"
           >
             <img src="assets/whatsapp.svg" alt="WhatsApp" className="h-6 w-6" />
             WhatsApp
           </a>
           <a
-            href="mailto:arjundeshmukh26@gmail.com"
+            href="mailto:visheshbhandare9@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-btn text-white-500 hover:text-white transition-colors duration-300"
@@ -28,7 +28,7 @@ const Contact = () => {
             Email
           </a>
           <a
-            href="https://github.com/deshmukharjun"
+            href="https://github.com/vishesh2201"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-btn text-white-500 hover:text-white transition-colors duration-300"
@@ -37,13 +37,22 @@ const Contact = () => {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/arjundeshmukh26/"
+            href="www.linkedin.com/in/vishesh-bhandare-1a9906244"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-btn text-white-500 hover:text-white transition-colors duration-300"
           >
             <img src="assets/linkedin.svg" alt="LinkedIn" className="h-6 w-6" />
             LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/wisheswithoutwishes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-btn text-white-500 hover:text-white transition-colors duration-300"
+          >
+            <img src="assets/instagram.svg" alt="Instagram" className="h-6 w-6" />
+            Instagram
           </a>
         </div>
       </div>

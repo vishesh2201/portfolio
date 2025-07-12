@@ -6,7 +6,7 @@ const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('arjundeshmukh26@gmail.com');
+    navigator.clipboard.writeText('visheshbhandare9@gmail.com');
     setHasCopied(true);
     setTimeout(() => {
       setHasCopied(false);
@@ -18,7 +18,7 @@ const About = () => {
       <div className="p-2 flex items-center justify-center rounded-lg bg-[#80808026]">
         <img src={image} alt={name} className="h-5 w-5" />
       </div>
-      <span className="grid-subtext text-sm">{name}</span>
+      <span className="grid-subtext text-sm whitespace-nowrap">{name}</span>
     </li>
   );
 
@@ -27,15 +27,15 @@ const About = () => {
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img 
-              src="assets/grid11.png" 
-              alt="grid-1" 
-              className="w-full sm:h-[276px] object-contain" 
+            <img
+              src="assets/grid11.png"
+              alt="grid-1"
+              className="w-full sm:h-[276px] object-contain"
             />
             <div>
-              <p className="grid-headtext">Hey, I’m Arjun Deshmukh</p>
+              <p className="grid-headtext">Hey, I'm Vishesh Bhandare</p>
               <p className="grid-subtext">
-                With 2 years of experience, I have honed my skills in frontend and Android Development, 
+                With 2 years of experience, I have honed my skills in frontend and Android Development,
                 creating dynamic and responsive websites and apps.
               </p>
             </div>
@@ -52,7 +52,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext mb-4">
-                I specialize in a variety of languages, frameworks, and tools that allow me to build 
+                I specialize in a variety of languages, frameworks, and tools that allow me to build
                 robust and scalable applications.
               </p>
             </div>
@@ -74,13 +74,13 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
+              <p className="grid-headtext">I'm very flexible with time zone communications & locations</p>
               <p className="grid-subtext">
                 I'm based in <span className="text-white">Pune, Maharashtra</span> and open to remote work worldwide.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
                 <a
-                  href="https://www.instagram.com/arjun.3d/"
+                  href="https://www.instagram.com/wisheswithoutwishes/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-btn text-white-500 hover:text-white transition-colors duration-300 flex items-center"
@@ -89,7 +89,7 @@ const About = () => {
                   <span className="text-center w-full">Instagram</span>
                 </a>
                 <a
-                  href="mailto:arjundeshmukh26@gmail.com"
+                  href="mailto:visheshbhandare9@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-btn text-white-500 hover:text-white transition-colors duration-300 flex items-center"
@@ -98,7 +98,7 @@ const About = () => {
                   <span className="text-center w-full">Email Me</span>
                 </a>
                 <a
-                  href="https://github.com/deshmukharjun"
+                  href="https://github.com/vishesh2201"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-btn text-white-500 hover:text-white transition-colors duration-300 flex items-center"
@@ -107,7 +107,7 @@ const About = () => {
                   <span className="text-center w-full">My GitHub</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/arjundeshmukh26/"
+                  href="https://www.linkedin.com/in/vishesh-bhandare-1a9906244"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-btn text-white-500 hover:text-white transition-colors duration-300 flex items-center"
@@ -122,15 +122,15 @@ const About = () => {
 
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img 
-              src="assets/grid3.png" 
-              alt="grid-3" 
-              className="w-full sm:h-[266px] h-fit object-contain" 
+            <img
+              src="assets/grid3.png"
+              alt="grid-3"
+              className="w-full sm:h-[266px] h-fit object-contain"
             />
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn't just my 
+                I love solving problems and building things through code. Programming isn't just my
                 profession—it's my passion. I enjoy exploring new technologies, and enhancing my skills.
                 I enjoy creating spectacular visuals and going out of the box to make something special.
               </p>
@@ -150,7 +150,7 @@ const About = () => {
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
                 <p className="lg:text-xl md:text-xl font-medium text-gray_gradient text-white">
-                  arjundeshmukh26@gmail.com
+                  visheshbhandare9@gmail.com
                 </p>
               </div>
             </div>
